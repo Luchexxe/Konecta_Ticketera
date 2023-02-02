@@ -1,0 +1,93 @@
+﻿body {
+    margin: 50px;
+    padding: 0px;
+    
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+h3 {
+    color: blue;
+    text-align: center;
+}
+#formcontent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.botones {
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color: #79bbff;
+    border-radius: 10px;
+    border: 1px solid #84bbf3;
+   /** display: inline-block;**/
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 10px;
+    text-decoration: none;
+    text-shadow: 0px 0px 0px #528ecc;
+}
+
+    .botones:hover {
+        background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+        background-color: #378de5;
+    }
+
+    .botones:active {
+        position: relative;
+        top: 1px;
+    }
+
+.PadreBotones {
+    align-content: center;
+    height: 50px;
+    width: 1000px;
+    position: relative;
+    padding: 10px,1px,10px,1px;
+    display: flex;
+    justify-content: center;
+}
+
+.HijoBotones {
+   float:left;
+
+}
+
+.modEstado {
+  text-align:center;
+}
+    .modEstado table {
+        margin: 0 auto;
+        text-align: left;
+    }
+
+.GridView {
+    border-spacing: 3px;
+    border-collapse: separate;
+}
+
+    .GridView > tbody > tr > th,
+    .GridView > tbody > tr > td {
+        border: 2px ridge black;
+        padding: 3px;
+    }
