@@ -15,7 +15,7 @@ namespace TicketForm
         {
 
 
-            if (Session["loggedUser"] != null)
+            if (Session["loggedUser"] != null && (Session["rol"].Equals("User")|| Session["rol"].Equals("Supervisor")))
             {
                 string loggedUser = Session["loggedUser"].ToString();
                 lblBienvenida.Text = "Bienvenido/a " + loggedUser;
@@ -62,7 +62,7 @@ namespace TicketForm
                 {
                     
                         conn.Open();
-                    // string patron = "bbvakonecta";
+                    var prod = Session["producto"];
                     string patron = ConfigurationManager.AppSettings["patron"];
                     SqlCommand cmm = new SqlCommand("SP_UpdatePass", conn);
                         cmm.CommandType = System.Data.CommandType.StoredProcedure;
@@ -70,7 +70,8 @@ namespace TicketForm
                         cmm.Parameters.AddWithValue("@Usuario", lblusername.Text);
                         cmm.Parameters.AddWithValue("@Pass", tbpassword.Text);
                         cmm.Parameters.AddWithValue("@Patron", patron);
-                        cmm.ExecuteNonQuery();
+                    cmm.Parameters.AddWithValue("@Programa", prod);
+                    cmm.ExecuteNonQuery();
                         conn.Close();
                         Clean();
                     lblSuccess.Text = "Se actualizó contraseña";
@@ -84,7 +85,32 @@ namespace TicketForm
 
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TicketForm_Usr.aspx");
+
+            if (Session["producto"].Equals("BBVA"))
+            {
+                Response.Redirect("TicketForm_Usr.aspx");
+            }
+            else if (Session["producto"].Equals("POWER_PAY"))
+            {
+                if (Session["rol"].Equals("User"))
+                {
+                    Response.Redirect("TicketFormPP_Usr.aspx");
+                }
+                else
+                {
+                    Response.Redirect("TicketFormPP.aspx");
+                }
+                    
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            
+
+
+         
+               
         }
 
     }

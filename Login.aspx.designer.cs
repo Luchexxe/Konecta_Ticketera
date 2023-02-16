@@ -60,6 +60,24 @@ namespace TicketForm
         protected global::System.Web.UI.WebControls.TextBox tbPassword;
 
         /// <summary>
+        /// Control lblPrograma.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrograma;
+
+        /// <summary>
+        /// Control cboPrograma.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboPrograma;
+
+        /// <summary>
         /// Control lblError.
         /// </summary>
         /// <remarks>

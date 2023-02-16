@@ -55,8 +55,7 @@
                                   </asp:TableCell>
                                 <asp:TableCell>
                                     <asp:DropDownList ID="RolList"  runat="server">
-                                    <asp:ListItem Text="Admin" Value="Admin" />
-                                    <asp:ListItem Text="User" Value="User" />
+                                                                     
                                     </asp:DropDownList>
 
                                 </asp:TableCell>
@@ -96,6 +95,7 @@
                                  <asp:TableCell ColumnSpan="2">
                                      <asp:Label runat="server" CssClass="alert-danger" ID="lblError"></asp:Label>
                                      <asp:Label runat="server" CssClass="alert-danger" ID="lblErrorPassword"></asp:Label>
+                                     <asp:Label runat="server" CssClass="alert-success" ID="lblSuccess"></asp:Label>
                                  </asp:TableCell>
                                
                             </asp:TableRow>

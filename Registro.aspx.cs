@@ -21,6 +21,18 @@ namespace TicketForm
                 lblError.Text = "";
                 lblErrorPassword.Text = "";
                 LeerDatos();
+
+                if (Session["producto"].Equals("POWER_PAY"))
+                {
+                    RolList.Items.Add("Admin");
+                    RolList.Items.Add("User");
+                    RolList.Items.Add("Supervisor");
+                }
+                else
+                {
+                    RolList.Items.Add("Admin");
+                    RolList.Items.Add("User");
+                }
             }
             else
             {
@@ -56,28 +68,42 @@ namespace TicketForm
                 }
                 else
                 {
+                    var prog = Session["producto"];
                     conn.Open();
                     SqlCommand sqlcmd = new SqlCommand("SP_ExistUser", conn);
                     sqlcmd.CommandType = System.Data.CommandType.StoredProcedure;
                     sqlcmd.Parameters.AddWithValue("@Usuario", tbUsuario.Text);
+                    sqlcmd.Parameters.AddWithValue("@Programa", prog);
                     int usr = Convert.ToInt32(sqlcmd.ExecuteScalar());
                     
                     if (usr < 1)
                     {
-                        //  string patron = "bbvakonecta";
-                        string patron = ConfigurationManager.AppSettings["patron"];
-                        SqlCommand cmm = new SqlCommand("SP_AddLoginUser", conn);
-                        cmm.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmm.Parameters.AddWithValue("@Nombres", tbNombre.Text);
-                        cmm.Parameters.AddWithValue("@Apellidos", tbApellidos.Text);
-                        cmm.Parameters.AddWithValue("@Rol",RolList.SelectedValue.ToString());
-                        cmm.Parameters.AddWithValue("@Usuario", tbUsuario.Text);
-                        cmm.Parameters.AddWithValue("@Passw", tbpassword.Text);
-                        cmm.Parameters.AddWithValue("@Patron", patron);
-                        cmm.ExecuteNonQuery();
-                        conn.Close();
-                        Clean();
-                        LeerDatos();
+
+                        try
+                        {
+                            
+                            string patron = ConfigurationManager.AppSettings["patron"];
+                            SqlCommand cmm = new SqlCommand("SP_AddLoginUser", conn);
+                            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+                            cmm.Parameters.AddWithValue("@Nombres", tbNombre.Text);
+                            cmm.Parameters.AddWithValue("@Apellidos", tbApellidos.Text);
+                            cmm.Parameters.AddWithValue("@Rol", RolList.SelectedValue.ToString());
+                            cmm.Parameters.AddWithValue("@Usuario", tbUsuario.Text);
+                            cmm.Parameters.AddWithValue("@Passw", tbpassword.Text);
+                            cmm.Parameters.AddWithValue("@Patron", patron);
+                            cmm.Parameters.AddWithValue("@Programa", prog);
+                            cmm.ExecuteNonQuery();
+                            conn.Close();
+                            Clean();
+                            LeerDatos();
+                            lblSuccess.Text = "Usuario creado correctamente";
+                        }
+                        catch (Exception)
+                        {
+
+                            lblError.Text = "Ocurrió un error al crear contacto";
+                        }
+                      
                     }
                     else
                     {
@@ -94,10 +120,16 @@ namespace TicketForm
 
         void LeerDatos()
         {
-            SqlCommand readData = new SqlCommand("Select * from Users", conn);
-            SqlDataAdapter da = new SqlDataAdapter(readData);
+            var prog = Session["producto"];
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataAdapter sqlData = new SqlDataAdapter("SP_UsersView", conn);
+            sqlData.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlData.SelectCommand.Parameters.AddWithValue("@programa", prog);
+
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            sqlData.Fill(dt);
+            conn.Close();
             gvUsers.DataSource = dt;
             gvUsers.DataBind();
 
@@ -106,7 +138,22 @@ namespace TicketForm
 
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TicketForm.aspx");
+            var prog = Session["producto"];
+            if (prog.Equals("BBVA"))
+            {
+                Response.Redirect("TicketForm.aspx");
+            }
+            else if (prog.Equals("POWER_PAY"))
+            {
+                Response.Redirect("TicketFormPP.aspx");
+            }
+
+            else 
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+            
         }
     }
 }

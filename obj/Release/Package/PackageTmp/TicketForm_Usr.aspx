@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="TicketForm_Usr.aspx.cs" Inherits="TicketForm.TicketForm_Usr" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="TicketFormPP_Usr.aspx.cs" Inherits="TicketForm.TicketFormPP_Usr" %>
 
 <!DOCTYPE html>
 
@@ -58,6 +58,9 @@
                         <asp:TextBox ID="txtRUC" runat="server"></asp:TextBox>
                     
                     </td>
+
+
+
                       <td>
                         <asp:Label ID="Label10" runat="server" Text="Fec. Inicio"></asp:Label>
                     </td>
@@ -111,7 +114,7 @@
                     </td>
                     <td colspan="2">
 
-                        <asp:DropDownList ID="DDEstado" runat="server">
+                        <asp:DropDownList ID="DDEstado" runat="server" style="width: 134px">
                         <asp:ListItem Enabled="true" Text= "" Value= "-1"></asp:ListItem>
 
                             <asp:ListItem Text= "PENDIENTE" Value="PENDIENTE"></asp:ListItem>
@@ -122,6 +125,10 @@
                         <!--<asp:TextBox ID="txtEstado2" runat="server"></asp:TextBox>-->
                     
                     </td>
+
+                      
+
+
                       <td>
                         <asp:Label ID="Label11" runat="server" Text="Fec. Fin"></asp:Label>
                     </td>

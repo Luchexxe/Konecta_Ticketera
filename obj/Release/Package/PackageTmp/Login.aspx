@@ -36,6 +36,18 @@
                         <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
                         <asp:TextBox ID="tbPassword" CssClass="form-control" TextMode="Password" runat="server" placeholder="Password"></asp:TextBox>
                     </div>
+                 
+                    <div>
+                        <asp:Label ID="lblPrograma" runat="server" Text="Programa:"></asp:Label>
+                         <br/>
+                              <asp:DropDownList ID="cboPrograma"  runat="server" >
+                                    <asp:ListItem Text="BBVA" Value="BBVA" />
+                                    <asp:ListItem Text="POWER PAY" Value="POWER_PAY" />
+                                    
+                                                                         
+                                    </asp:DropDownList>
+
+                    </div>
                     <hr/>
                     <div class="row">
                         <asp:Label runat="server" CssClass="alert-danger" ID="lblError"></asp:Label>

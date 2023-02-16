@@ -64,9 +64,11 @@ namespace TicketForm
                 {
 
                     conn.Open();
+                    var prod = Session["producto"];
                     SqlCommand sqlcmd = new SqlCommand("SP_ExistUser", conn);
                     sqlcmd.CommandType = System.Data.CommandType.StoredProcedure;
                     sqlcmd.Parameters.AddWithValue("@Usuario", tbUsuario.Text);
+                    sqlcmd.Parameters.AddWithValue("@Programa", prod);
                     int cusr = Convert.ToInt32(sqlcmd.ExecuteScalar());
                     if (cusr == 1)
                     {
@@ -79,6 +81,7 @@ namespace TicketForm
                         cmm.Parameters.AddWithValue("@Usuario", usr);
                         cmm.Parameters.AddWithValue("@Pass", tbpassword.Text);
                         cmm.Parameters.AddWithValue("@Patron", patron);
+                        cmm.Parameters.AddWithValue("@Programa", prod);
                         cmm.ExecuteNonQuery();
                         conn.Close();
                         Clean();
@@ -101,15 +104,41 @@ namespace TicketForm
 
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TicketForm.aspx");
+
+
+            if (Session["producto"].Equals("BBVA"))
+            {
+                Response.Redirect("TicketForm.aspx");
+            }
+            else if (Session["producto"].Equals("POWER_PAY"))
+            {
+                Response.Redirect("TicketFormPP.aspx");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+
+
+
+
+          
         }
 
         void LeerDatos()
         {
-            SqlCommand readData = new SqlCommand("Select * from Users", conn);
-            SqlDataAdapter da = new SqlDataAdapter(readData);
+
+            var prog = Session["producto"];
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataAdapter sqlData = new SqlDataAdapter("SP_UsersView", conn);
+            sqlData.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlData.SelectCommand.Parameters.AddWithValue("@programa", prog);
+
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            sqlData.Fill(dt);
+            conn.Close();
             gvUsers.DataSource = dt;
             gvUsers.DataBind();
 
@@ -125,10 +154,12 @@ namespace TicketForm
             else
             {
                     conn.Open();
+                var prog = Session["producto"];
                     SqlCommand sqlcmd = new SqlCommand("SP_ExistUser", conn);
                     sqlcmd.CommandType = System.Data.CommandType.StoredProcedure;
                     sqlcmd.Parameters.AddWithValue("@Usuario", tbUsuario.Text);
-                    int usr = Convert.ToInt32(sqlcmd.ExecuteScalar());
+                      sqlcmd.Parameters.AddWithValue("@Programa", prog);
+                int usr = Convert.ToInt32(sqlcmd.ExecuteScalar());
 
                     if (usr == 1)
                     {
@@ -136,8 +167,9 @@ namespace TicketForm
                         SqlCommand cmm = new SqlCommand("SP_DeleteUser", conn);
                         cmm.CommandType = System.Data.CommandType.StoredProcedure;
                         cmm.Parameters.AddWithValue("@Usuario", tbUsuario.Text);
-                       
-                        cmm.ExecuteNonQuery();
+                          cmm.Parameters.AddWithValue("@Programa", prog);
+
+                    cmm.ExecuteNonQuery();
                         conn.Close();
                          lblSuccess.Text = "El usuario " + tbUsuario.Text+ " fue eliminado" ;
                           Clean();

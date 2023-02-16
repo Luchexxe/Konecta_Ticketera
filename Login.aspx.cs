@@ -23,6 +23,7 @@ namespace TicketForm
             cmd.Connection.Open();
             cmd.Parameters.Add("@Usuario",SqlDbType.VarChar,50).Value=tbUsuario.Text;
             cmd.Parameters.Add("@Passw", SqlDbType.VarChar, 50).Value = tbPassword.Text;
+            cmd.Parameters.Add("@Programa", SqlDbType.VarChar, 50).Value = cboPrograma.Text;
             cmd.Parameters.Add("@Patron", SqlDbType.VarChar, 50).Value = patron;
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
@@ -30,22 +31,54 @@ namespace TicketForm
                 string nomb = dr.GetString(1);
                 string usern = dr.GetString(4);
                 string rol = dr.GetString(3);
+                string producto = dr.GetString(6);
                 Session["loggedUser"] = nomb;
                 Session["username"] = usern;
                 Session["rol"] = rol;
+                Session["producto"] = producto;
 
-                if (rol.Equals("Admin"))
+                if (producto.Equals("BBVA"))
                 {
-                    Response.Redirect("TicketForm.aspx");
+                    if (rol.Equals("Admin"))
+                    {
+                        Response.Redirect("TicketForm.aspx");
+                    }
+                    else if (rol.Equals("User"))
+                    {
+                        Response.Redirect("TicketForm_Usr.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Login.aspx");
+                    }
                 }
-                else if (rol.Equals("User"))
+
+                else if (producto.Equals("POWER_PAY"))
                 {
-                    Response.Redirect("TicketForm_Usr.aspx");
+
+                    if (rol.Equals("Admin") || rol.Equals("Supervisor"))
+                    {
+                        Response.Redirect("TicketFormPP.aspx");
+                    }
+                    else if (rol.Equals("User"))
+                    {
+                        Response.Redirect("TicketFormPP_Usr.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Login.aspx");
+                    }
+
                 }
-                else
+                else 
+                
                 {
                     Response.Redirect("Login.aspx");
                 }
+
+
+
+               
                 //Agregamos una sesion de usuario
                
             }
