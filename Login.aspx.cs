@@ -11,6 +11,7 @@ namespace TicketForm
 
         }
        // string patron = "bbvakonecta";
+       //
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
             string conn = ConfigurationManager.ConnectionStrings["ConnectionBBVA"].ConnectionString;
