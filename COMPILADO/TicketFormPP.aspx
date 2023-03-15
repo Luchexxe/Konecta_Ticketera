@@ -235,7 +235,7 @@
 
                <asp:GridView ID="TicketResult"  CssClass="table" onrowdatabound="TicketResult_RowDataBound"   runat="server" AutoGenerateColumns="false"  >
             <Columns>
-              <asp:TemplateField>
+              <asp:TemplateField ID="LinkVisualizar">
                     <ItemTemplate>
                         <asp:LinkButton ID="lnkView" runat="server" CommandArgument='<%# Eval("Ticket") %>' OnClick="lnk_OnClick">Evaluar</asp:LinkButton>
                     </ItemTemplate>

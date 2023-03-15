@@ -38,7 +38,7 @@
                                   </asp:TableCell>
                                 <asp:TableCell>
                                    <asp:DropDownList ID="cboSegmento" Width="300px" runat="server" AutoPostBack = "true" OnSelectedIndexChanged="cboSegmento_SelectedIndexChanged">
-                                    <asp:ListItem Text="COMERCIO" Value="COMERCIO" />
+                                      <asp:ListItem Text="COMERCIO" Value="COMERCIO" />
                                     <asp:ListItem Text="USUARIO_FINAL" Value="USUARIO_FINAL" />
                                     
                                                                          
@@ -50,6 +50,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell>
                                   <asp:DropDownList ID="cboBuzon" Width="300px" runat="server">
+                                    
                                     <asp:ListItem Text="usuario@powerpay.pe" Value="usuario@powerpay.pe" />
                                     <asp:ListItem Text="comercio@powerpay.pe" Value="comercio@powerpay.pe" />
                                     <asp:ListItem Text="atenciónreclamos@powerpay.pe" Value="atenciónreclamos@powerpay.pe" />
@@ -119,6 +120,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell>
                                   <asp:DropDownList ID="DDCAutorizado" Width="300px" runat="server">
+                                    <asp:ListItem Text="" Value="" />
                                     <asp:ListItem Text="SI" Value="SI" />
                                      <asp:ListItem Text="NO" Value="NO" />
                                        </asp:DropDownList>
@@ -153,11 +155,12 @@
 
                             <asp:TableRow>  
                                   <asp:TableCell>
-                                      <asp:Label runat="server" ID="lblTipoCaso"  Width="150px" Text="Tipo Caso"></asp:Label>
+                                      <asp:Label runat="server" ID="lblTipoCaso"  Width="150px" Text="Tipo"></asp:Label>
                                   </asp:TableCell>
                                 <asp:TableCell>
-                                   <asp:DropDownList ID="cboTipoCaso" Width="300px" runat="server">
-                                    <asp:ListItem Text="CONSULTA" Value="CONSULTA" />
+                                   <asp:DropDownList ID="cboTipoCaso" Width="300px" runat="server"  AutoPostBack = "true" OnSelectedIndexChanged="cboTipoCaso_SelectedIndexChanged">
+                                    <asp:ListItem Text="SELECCIONE" Value="SELECCIONE" />
+                                     <asp:ListItem Text="CONSULTA" Value="CONSULTA" />
                                     <asp:ListItem Text="REQUERIMIENTO" Value="REQUERIMIENTO" />
                                     <asp:ListItem Text="RECLAMO" Value="RECLAMO" />
                                                                          
@@ -165,13 +168,29 @@
 
                                 </asp:TableCell>
 
+                                 <asp:TableCell>
+                                      <asp:Label runat="server" ID="lblSubtipoCaso"  Width="150px" Text="Sub Tipo Caso"></asp:Label>
+                                  </asp:TableCell>
                                 <asp:TableCell>
+                                   <asp:DropDownList ID="cboSubTipoCaso" Width="300px" runat="server">
+                                    <%--<asp:ListItem Text="CONSULTA" Value="CONSULTA" />
+                                    <asp:ListItem Text="REQUERIMIENTO" Value="REQUERIMIENTO" />
+                                    <asp:ListItem Text="RECLAMO" Value="RECLAMO" />--%>
+                                                                         
+                                    </asp:DropDownList>
+
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                         <asp:TableCell>
                                       <asp:Label runat="server" ID="lblObservacion" Width="150px" Text="Observacion"></asp:Label>
                                   </asp:TableCell>
                                 <asp:TableCell>
                                     <asp:TextBox CssClass="form-control" Width="300px" Height="90px" runat="server" TextMode="MultiLine" ID="tbObservacion" placeholder="Ingrese Observacion"></asp:TextBox>
                                 </asp:TableCell>
+
                             </asp:TableRow>
+
                         </asp:Table>
                     </fieldset>
                     <br />

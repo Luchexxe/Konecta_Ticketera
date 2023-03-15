@@ -39,6 +39,8 @@ namespace TicketForm
                     BtnCrearTicketEmail.Visible = false;
                     ModificarEstado.Visible = false;
                     BtnRegistrar.Visible = false;
+                    LinkVisualizar.Visible = false;
+                    
                 }
 
                 else

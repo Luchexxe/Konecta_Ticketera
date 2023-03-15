@@ -366,6 +366,15 @@ namespace TicketForm
         protected global::System.Web.UI.WebControls.GridView TicketResult;
 
         /// <summary>
+        /// Control LinkVisualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TemplateField LinkVisualizar;
+
+        /// <summary>
         /// Control ModificarEstado.
         /// </summary>
         /// <remarks>
