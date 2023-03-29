@@ -39,7 +39,7 @@ namespace TicketForm
                     BtnCrearTicketEmail.Visible = false;
                     ModificarEstado.Visible = false;
                     BtnRegistrar.Visible = false;
-                    LinkVisualizar.Visible = false;
+                    //LinkVisualizar.Visible = false;
                     
                 }
 
@@ -149,7 +149,8 @@ namespace TicketForm
                     dt.Rows.Add();
                     for (int i = 1; i < row.Cells.Count; i++)
                     {
-                        dt.Rows[dt.Rows.Count - 1][i - 1] = row.Cells[i].Text;
+                        //dt.Rows[dt.Rows.Count - 1][i - 1] = row.Cells[i].Text;
+                        dt.Rows[dt.Rows.Count - 1][i - 1] = row.Cells[i].Text.Replace("&nbsp;", "");
                     }
                 }
                 using (XLWorkbook wb = new XLWorkbook())
@@ -404,15 +405,15 @@ namespace TicketForm
             try
             {
                 GridViewRow grv = e.Row;
-                if (grv.Cells[17].Text.Equals("ABIERTO"))
+                if (grv.Cells[23].Text.Equals("ABIERTO"))
                 {
                     e.Row.BackColor = System.Drawing.Color.Red;
                 }
-                if (grv.Cells[17].Text.Equals("DERIVADO"))
+                if (grv.Cells[23].Text.Equals("DERIVADO"))
                 {
                     e.Row.BackColor = System.Drawing.Color.Orange;
                 }
-                if (grv.Cells[17].Text.Equals("CERRADO"))
+                if (grv.Cells[23].Text.Equals("CERRADO"))
                 {
                     e.Row.BackColor = System.Drawing.Color.LightGreen;
                 }

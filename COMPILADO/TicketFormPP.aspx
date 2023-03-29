@@ -235,7 +235,7 @@
 
                <asp:GridView ID="TicketResult"  CssClass="table" onrowdatabound="TicketResult_RowDataBound"   runat="server" AutoGenerateColumns="false"  >
             <Columns>
-              <asp:TemplateField ID="LinkVisualizar">
+              <asp:TemplateField>
                     <ItemTemplate>
                         <asp:LinkButton ID="lnkView" runat="server" CommandArgument='<%# Eval("Ticket") %>' OnClick="lnk_OnClick">Evaluar</asp:LinkButton>
                     </ItemTemplate>
@@ -243,7 +243,7 @@
                 </asp:TemplateField>
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="TICKET" HeaderText="Ticket" />
                    
-                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="FECHA_TICKET" HeaderText="Fecha Ticket" />
+             <%--   <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="FECHA_TICKET" HeaderText="Fecha Ticket" />
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="HORA_TICKET" HeaderText="Hora Ticket" />
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="FECHA_TICKET_ACTUALIZADA" HeaderText="Fecha Ticket Actualizado" />
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="HORA_TICKET_ACTUALIZADA" HeaderText="Hora Ticket Actualizado" />
@@ -266,9 +266,33 @@
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CORREO" HeaderText="Correo" />
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CARGO" HeaderText="Cargo" />
                 <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CONTACTO_AUTORIZADO" HeaderText="Contacto Autorizado" />
-                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="OBSERVACION" HeaderText="Observacion" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="OBSERVACION" HeaderText="Observacion" />--%>
 
               
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="FECHA_TICKET" HeaderText="Fecha Ticket" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="HORA_TICKET" HeaderText="Hora Ticket" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="FECHA_TICKET_ACTUALIZADA" HeaderText="Fecha Ticket Actualizado" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="HORA_TICKET_ACTUALIZADA" HeaderText="Hora Ticket Actualizado" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="TMO_TICKET" HeaderText="SLA" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="SEGMENTO_CLIENTE" HeaderText="Segmento Cliente" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="MEDIO" HeaderText="Canal" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="TELEFONO" HeaderText="Telefono" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CLIENTE" HeaderText="Cliente" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="DNI" HeaderText="DNI" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CORREO" HeaderText="Correo" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="RUC" HeaderText="RUC" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="RAZON_SOCIAL" HeaderText="Razon Social" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CONTACTO_AUTORIZADO" HeaderText="Contacto Autorizado" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="CARGO" HeaderText="Cargo" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="ID_LLAMADA" HeaderText="ID Interaccion" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="URL_LLAMADA" HeaderText="URL Interaccion" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="FECHA_LLAMADA" HeaderText="Fecha Interaccion" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="BUZON" HeaderText="Buzon" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="ASUNTO" HeaderText="Asunto" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="TIPO_DE_CASO" HeaderText="Tipo Caso" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="ESTADO" HeaderText="Estado" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false"  DataField="OBSERVACION" HeaderText="Observacion" />
+                <asp:BoundField HeaderStyle-Wrap="false" ItemStyle-Width="100%" ItemStyle-Wrap="false" DataField="AGENTE" HeaderText="Agente" />
 
             </Columns>
 
