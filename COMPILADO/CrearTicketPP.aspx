@@ -160,8 +160,8 @@
                                 <asp:TableCell>
                                    <asp:DropDownList ID="cboTipoCaso" Width="300px" runat="server"  AutoPostBack = "true" OnSelectedIndexChanged="cboTipoCaso_SelectedIndexChanged">
                                     <asp:ListItem Text="SELECCIONE" Value="SELECCIONE" />
-                                     <asp:ListItem Text="CONSULTA" Value="CONSULTA" />
-                                    <asp:ListItem Text="REQUERIMIENTO" Value="REQUERIMIENTO" />
+                                     <asp:ListItem Text="CONSULTA / REQUERIMIENTO" Value="CONSULTA / REQUERIMIENTO" />
+                                    <asp:ListItem Text="INCIDENCIA" Value="INCIDENCIA" />
                                     <asp:ListItem Text="RECLAMO" Value="RECLAMO" />
                                                                          
                                     </asp:DropDownList>

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\DiscoD\EC_KONECTA\DESARROLLOS BBVA - POWER PAY\GIT\Konecta_Ticketera1\Konecta_Ticketera\COMPILADO</_PublishTargetUrl>
-    <History>True|2023-03-29T19:47:39.4491307Z;True|2023-03-15T12:06:22.6618273-05:00;True|2023-03-15T12:06:16.8812036-05:00;True|2023-02-24T20:52:14.1375971-05:00;</History>
+    <History>True|2023-04-18T01:40:49.8499389Z;True|2023-03-29T14:47:39.4491307-05:00;True|2023-03-15T12:06:22.6618273-05:00;True|2023-03-15T12:06:16.8812036-05:00;True|2023-02-24T20:52:14.1375971-05:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ActualizarPassword.aspx">
@@ -177,13 +177,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2023 10:54:18</publishTime>
     </File>
     <File Include="bin/TicketForm.dll">
-      <publishTime>03/29/2023 14:47:02</publishTime>
+      <publishTime>04/17/2023 20:40:49</publishTime>
     </File>
     <File Include="bin/TicketForm.pdb">
-      <publishTime>03/29/2023 14:47:02</publishTime>
+      <publishTime>04/17/2023 20:40:49</publishTime>
     </File>
     <File Include="CrearTicketPP.aspx">
-      <publishTime>02/25/2023 21:32:44</publishTime>
+      <publishTime>04/17/2023 20:39:44</publishTime>
     </File>
     <File Include="Login.aspx">
       <publishTime>02/24/2023 20:45:55</publishTime>
