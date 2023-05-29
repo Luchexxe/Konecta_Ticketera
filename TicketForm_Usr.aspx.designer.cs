@@ -195,15 +195,6 @@ namespace TicketForm
         protected global::System.Web.UI.WebControls.DropDownList DDEstado;
 
         /// <summary>
-        /// Control txtEstado2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEstado2;
-
-        /// <summary>
         /// Control Label11.
         /// </summary>
         /// <remarks>
@@ -238,33 +229,6 @@ namespace TicketForm
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar CalendarFin;
-
-        /// <summary>
-        /// Control Buscar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buscar2;
-
-        /// <summary>
-        /// Control Exportar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Exportar2;
-
-        /// <summary>
-        /// Control Limpiar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Limpiar2;
 
         /// <summary>
         /// Control lblFiltroOK.
@@ -355,15 +319,6 @@ namespace TicketForm
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDEstadoMod;
-
-        /// <summary>
-        /// Control txtEstadoMod.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEstadoMod;
 
         /// <summary>
         /// Control Label7.

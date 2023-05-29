@@ -38,7 +38,7 @@ namespace TicketForm
                     lblBienvenida.Text = "Bienvenido/a " + loggedUser;
                     BtnCrearTicketEmail.Visible = false;
                     ModificarEstado.Visible = false;
-                    BtnRegistrar.Visible = false;
+                    Button2.Visible = false;
                     //LinkVisualizar.Visible = false;
                     
                 }
@@ -66,7 +66,7 @@ namespace TicketForm
         public void clear()
         {
 
-            txtTicketMod.Text = txtEstadoMod.Text = txtObservacionMod.Text = "";
+            txtTicketMod.Text  = txtObservacionMod.Text = "";
             txtTicket.Text =txtDNI.Text= txtcAgente.Text = txtEmpresa.Text = txtRUC.Text = "";
             lblSuccessMessage.Text = lblErrorMessage.Text = "";
             DDEstadoMod.SelectedIndex = -1;
@@ -79,7 +79,7 @@ namespace TicketForm
 
         public void clearTicket()
         {
-            txtTicketMod.Text = txtEstadoMod.Text =txtDNI.Text= txtObservacionMod.Text = "";
+            txtTicketMod.Text =txtDNI.Text= txtObservacionMod.Text = "";
             DDEstadoMod.SelectedIndex = -1;
             DDEstadoMod.Items.FindByValue("-1").Enabled = true;
             Observacion_ticket.DataSource = null;

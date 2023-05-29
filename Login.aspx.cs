@@ -8,10 +8,7 @@ namespace TicketForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-       // string patron = "bbvakonecta";
-       //
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
             string conn = ConfigurationManager.ConnectionStrings["ConnectionBBVA"].ConnectionString;
@@ -22,7 +19,7 @@ namespace TicketForm
                 CommandType = CommandType.StoredProcedure
             };
             cmd.Connection.Open();
-            cmd.Parameters.Add("@Usuario",SqlDbType.VarChar,50).Value=tbUsuario.Text;
+            cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 50).Value = tbUsuario.Text;
             cmd.Parameters.Add("@Passw", SqlDbType.VarChar, 50).Value = tbPassword.Text;
             cmd.Parameters.Add("@Programa", SqlDbType.VarChar, 50).Value = cboPrograma.Text;
             cmd.Parameters.Add("@Patron", SqlDbType.VarChar, 50).Value = patron;
@@ -37,7 +34,6 @@ namespace TicketForm
                 Session["username"] = usern;
                 Session["rol"] = rol;
                 Session["producto"] = producto;
-
                 if (producto.Equals("BBVA"))
                 {
                     if (rol.Equals("Admin"))
@@ -53,10 +49,8 @@ namespace TicketForm
                         Response.Redirect("Login.aspx");
                     }
                 }
-
                 else if (producto.Equals("POWER_PAY"))
                 {
-
                     if (rol.Equals("Admin") || rol.Equals("Supervisor"))
                     {
                         Response.Redirect("TicketFormPP.aspx");
@@ -69,19 +63,11 @@ namespace TicketForm
                     {
                         Response.Redirect("Login.aspx");
                     }
-
                 }
-                else 
-                
+                else
                 {
                     Response.Redirect("Login.aspx");
                 }
-
-
-
-               
-                //Agregamos una sesion de usuario
-               
             }
             else
             {

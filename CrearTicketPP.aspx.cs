@@ -100,7 +100,17 @@ namespace TicketForm
         protected void cboSegmento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (cboSegmento.Text.Equals("USUARIO_FINAL"))
+            if (cboSegmento.Text.Equals("SELECCIONE"))
+            {
+                trSegmentoComercio.Visible = true;
+                trSegmentoComercio2.Visible = true;
+                tbRUC.Text = tbEmpresa.Text = tbCargo.Text = "";
+                cboBuzon.ClearSelection();
+                cboTipoCaso.Items.Clear();            
+                cboSubTipoCaso.Items.Clear();
+                DDCAutorizado.Text = "";
+            }
+            else if (cboSegmento.Text.Equals("USUARIO_FINAL"))
             {
                 trSegmentoComercio.Visible = false;
                 trSegmentoComercio2.Visible = false;
@@ -109,6 +119,21 @@ namespace TicketForm
                 cboTipoCaso.ClearSelection();
                 cboSubTipoCaso.ClearSelection();
                 DDCAutorizado.Text="";
+
+                conn.Open();
+                SqlCommand sqlcmd = new SqlCommand("GC_PP_Tipificaciones", conn);
+                sqlcmd.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@PP_Segmento", cboSegmento.SelectedItem.ToString());
+                sqlcmd.Parameters.AddWithValue("@PP_Tipo", "");
+                sqlcmd.Parameters.AddWithValue("@PP_Flag", "1");
+                //sqlcmd.ExecuteNonQuery();
+                cboTipoCaso.DataSource = sqlcmd.ExecuteReader();
+                cboTipoCaso.DataTextField = "TIPO";
+                cboTipoCaso.DataValueField = "TIPO";
+                cboTipoCaso.DataBind();
+                cboTipoCaso.Items.Insert(0, new ListItem("SELECCIONE", "0"));
+                conn.Close();
+                //Clean();
             }
             else if (cboSegmento.Text.Equals("COMERCIO"))
             {
@@ -118,8 +143,26 @@ namespace TicketForm
                 cboTipoCaso.ClearSelection();
                 cboSubTipoCaso.ClearSelection();
                 DDCAutorizado.ClearSelection();
+
+                conn.Open();
+                SqlCommand sqlcmd = new SqlCommand("GC_PP_Tipificaciones", conn);
+                sqlcmd.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@PP_Segmento", cboSegmento.SelectedItem.ToString());
+                sqlcmd.Parameters.AddWithValue("@PP_Tipo", "");
+                sqlcmd.Parameters.AddWithValue("@PP_Flag", "1");
+                //sqlcmd.ExecuteNonQuery();
+                cboTipoCaso.DataSource = sqlcmd.ExecuteReader();
+                cboTipoCaso.DataTextField = "TIPO";
+                cboTipoCaso.DataValueField = "TIPO";
+                cboTipoCaso.DataBind();
+                cboTipoCaso.Items.Insert(0, new ListItem("SELECCIONE", "0"));
+                conn.Close();
+                //Clean();
             }
-            
+
+
+
+
         }
 
         protected void cboTipoCaso_SelectedIndexChanged(object sender, EventArgs e)

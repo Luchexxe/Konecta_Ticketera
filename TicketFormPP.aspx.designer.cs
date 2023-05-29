@@ -33,22 +33,13 @@ namespace TicketForm
         protected global::System.Web.UI.WebControls.Label lblBienvenida;
 
         /// <summary>
-        /// Control BtnCrearTicketEmail.
+        /// Control Button2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCrearTicketEmail;
-
-        /// <summary>
-        /// Control BtnRegistrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRegistrar;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
         /// Control BtnActualizarPW.
@@ -67,6 +58,15 @@ namespace TicketForm
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnCerrar;
+
+        /// <summary>
+        /// Control BtnCrearTicketEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnCrearTicketEmail;
 
         /// <summary>
         /// Control Label1.
@@ -285,33 +285,6 @@ namespace TicketForm
         protected global::System.Web.UI.WebControls.Calendar CalendarFin;
 
         /// <summary>
-        /// Control Buscar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buscar2;
-
-        /// <summary>
-        /// Control Exportar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Exportar2;
-
-        /// <summary>
-        /// Control Limpiar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Limpiar2;
-
-        /// <summary>
         /// Control lblFiltroOK.
         /// </summary>
         /// <remarks>
@@ -339,15 +312,6 @@ namespace TicketForm
         protected global::System.Web.UI.WebControls.Button Buscar;
 
         /// <summary>
-        /// Control Exportar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Exportar;
-
-        /// <summary>
         /// Control Limpiar.
         /// </summary>
         /// <remarks>
@@ -355,6 +319,15 @@ namespace TicketForm
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Limpiar;
+
+        /// <summary>
+        /// Control Exportar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Exportar;
 
         /// <summary>
         /// Control TicketResult.
@@ -409,15 +382,6 @@ namespace TicketForm
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDEstadoMod;
-
-        /// <summary>
-        /// Control txtEstadoMod.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEstadoMod;
 
         /// <summary>
         /// Control Label7.

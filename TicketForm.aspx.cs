@@ -61,8 +61,8 @@ namespace TicketForm
         public void clear()
         {
            
-            txtTicketMod.Text = txtEstadoMod.Text = txtObservacionMod.Text = "";
-            txtTicket.Text = txtcAgente.Text = txtEmpresa.Text =  txtRUC.Text = txtEstado2.Text = "";
+            txtTicketMod.Text  = txtObservacionMod.Text = "";
+            txtTicket.Text = txtcAgente.Text = txtEmpresa.Text =  txtRUC.Text = "";
             lblSuccessMessage.Text = lblErrorMessage.Text = "";
             DDEstadoMod.SelectedIndex = -1;
             DDEstadoMod.Items.FindByValue("-1").Enabled = true;
@@ -412,7 +412,7 @@ namespace TicketForm
         }
         public void clearTicket()
         {
-            txtTicketMod.Text = txtEstadoMod.Text = txtObservacionMod.Text = "";
+            txtTicketMod.Text  = txtObservacionMod.Text = "";
             DDEstadoMod.SelectedIndex = -1;
             DDEstadoMod.Items.FindByValue("-1").Enabled = true;
             Observacion_ticket.DataSource = null;
